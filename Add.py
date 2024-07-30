@@ -1,7 +1,7 @@
-a=10
-b=20
-c=a+b
-print(c)
+a='python'
+x=a.upper()
+print(x)
 
-for i in range(5):
-    print("jenifer")
+b='Ball'
+y=b.capitalize()
+print(y)
