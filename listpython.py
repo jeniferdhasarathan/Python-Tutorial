@@ -76,3 +76,66 @@
 #o/p=[1,2,3,'hello','h','e','l','l','o']   
 
 
+#INSERT:
+
+#It is used to add the element in specific index.
+#if the specified index is not present,it will add the element at last.
+#it accets two arguments:
+ #1.index or position
+ #2.value or object.
+
+#syntax:
+# list.insert(imdex,value)
+
+#example:
+# lst=[1,2,3,4,5]
+# lst.insert(2,22)
+# o/p=[1,2,22,3,4,5]
+ 
+#TO REMOVE ELEMENT FROM LIST:
+#      1.REMOVE()
+#      2.POP()
+#      3.CLEAR()
+
+#1.REMOVE:
+#   It is used to remove the first occured specified element from the list.
+#   It rises value error,if the specified element is not present in the list.
+#   It rises type eror if no argument is given.
+#   It returns NONE.
+
+#syntax:
+#    list.remove(value)
+
+#lst=[1,2,3,4,5]
+#lst.remove(4)
+#o/p=[1,2,3,5]
+
+#pop:
+#It is used to remove the element based on index.
+#It returns the element which is removed.
+#It rises index error ,ifv the specified index is not present in the list.
+#It rises index error,if the given list is empty.
+#By default,pop will remove last element.
+#It accepts only one arguments.
+
+#syntax:
+# list.pop(index/position)
+
+#EXAMPLE:
+#lst=[1,2,3,4,5]
+#lst.pop(3)
+#o/p=[1,2,4,5]
+
+#CLEAR:
+
+#It is used to remove all the elements from a list.
+#It won't accept any arguments.
+#Boundaries of list will present but the values will get removed.
+
+#syntax:
+# list.clear()
+
+#EXAMPLE:
+# lst=[1,2,3,4,5]
+# lst.remove()
+#o/p=none
