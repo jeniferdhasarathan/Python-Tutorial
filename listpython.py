@@ -27,15 +27,14 @@
 #o/p = 5
 
 #MEMORY MANAGEMENT IN LIST: 
-
-  #In list, the memory management is simple and easy to understand.
-  #It stores data in a  sequence of memory or sequence of blocks.
-  #The indexing should be start from 0.
+#In list, the memory management is simple and easy to understand.
+#It stores data in a  sequence of memory or sequence of blocks.
+#The indexing should be start from 0.
   
 #MODIFICATION OF LIST:
   
-  #syntax:
-           #list[index]=value
+#syntax:
+#list[index]=value
 
 #EXAMPLE:
 #list=[1,2,3,'hello',True,10+2j,4,5,6]
@@ -52,7 +51,7 @@
 #We can pass collection and individual data types.
 
 #syntax:
-       #list.Append(individual/collection)
+#list.Append(individual/collection)
 
 #Example:
 #list=[1,2,3,4,6]
@@ -68,7 +67,7 @@
 #It accepts only collection data types as an argument.
 
 #syntax:
-    # list.extend(collection)
+# list.extend(collection)
 
 #Example:
 #list=[1,2,3]
@@ -81,8 +80,8 @@
 #It is used to add the element in specific index.
 #if the specified index is not present,it will add the element at last.
 #it accets two arguments:
- #1.index or position
- #2.value or object.
+#1.index or position
+#2.value or object.
 
 #syntax:
 # list.insert(imdex,value)
@@ -113,7 +112,7 @@
 #pop:
 #It is used to remove the element based on index.
 #It returns the element which is removed.
-#It rises index error ,ifv the specified index is not present in the list.
+#It rises index error ,if the specified index is not present in the list.
 #It rises index error,if the given list is empty.
 #By default,pop will remove last element.
 #It accepts only one arguments.
@@ -139,3 +138,116 @@
 # lst=[1,2,3,4,5]
 # lst.remove()
 #o/p=none
+
+#INDEX:
+#It is used to find the position of a first occured specified element from a list.
+#It rises value error,if the specified element is not present in the list.
+
+#it accept 3 arguments.
+#1.substring/element/values
+#2.start index
+#3.end index
+
+#syntax:
+#list.index(substring/value[si,ei])
+
+#ex:
+#lst=[1,2,3,4,5]
+#lst.index(2)
+#o/p=1
+
+#COUNT:
+#It is used to find the number of occurence of a specified element.
+#It returns 0 , if the specified element is not present in the list.
+
+#syntax:
+#list.count(sub_str/element)
+
+#ex:
+#lst=['a','b','c','d','e','a','b','c']
+#lst.count('b')
+#o/p=2
+
+#SORT:
+#Sort is used to arrange the records OR elements in ASCENDING or DESCENDING order.
+
+#It accepts 2 arguments
+#1.REVERSE=TRUE/FALSE
+#2.KEY=FUNCTION.
+
+#It returns NONE.
+#By default,it performs ASCENDING ORDER.
+
+#SYNTAX:
+#list.sort([reverse=true/false,key=])
+
+#EX:
+#lst=[1,2,3,4,5,6]
+#lst.sort()
+#lst
+#o/p=[1,2,3,4,5,6]
+
+#REVERSE:
+#It is used to reverse the given list.
+#It wont accept any arguments.
+
+#SYNTAX:
+#list.remove()
+
+#ex:
+#lst=[1,2,3,4,5,6,7]
+#lst.reverse()
+#o/p=[7,6,5,4,3,2,1]
+
+#COPY:
+#It is the process of copying element from one variable to another variable.
+#It is 3 types:
+#1.General copy/Normal copy
+#2.Shallow copy
+#3.Deep copy
+
+#1.GENERAL COPY:
+#It is the process of copying data from one variable to another variable.
+#Both the vaiables point out to the same memeory block.
+#In general copy,main list,nested list will be same for both the variables.
+
+#SYNTAX:
+#lst1=[elements]
+#lst2=lst1
+
+#ex:
+#lst=[1,2,[3,4]]
+#lst2=lst1
+#o/p=[1,2,[3,4]]
+
+#2.SHALLOW DEEP:
+#It is the process of copying data from one variable to another variable using copying method.
+#In shallow copy,main frame will differ but nested frame will remain same.
+
+#SYNTAX:
+#variable2=variable1.copy
+
+#ex:
+#lst1=[1,2,[3,4]
+#lst2=lst1.copy()
+#[1,2,[3,4]]
+
+#DEEP COPY:
+#It is the process of copying data from one variable to another by using a function called deep copy.
+#Befor copying the data,we need to import deep copy from a module calles copy.
+#In deep copy both main frame and nested frame will differ.
+
+#SYNTAX:
+
+#from copy import deepcopy
+#variable2=deepcopy(variable1)
+
+#ex:
+#lst=[1,2,[3,4]]
+#lst=deepcopy(lst)
+#lst
+#o/p=[1,2,[3,4]]
+
+
+ 
+
