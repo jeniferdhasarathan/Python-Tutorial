@@ -181,8 +181,8 @@
 #7.  rINDEX()
 #8.  FIND()
 #9.  rFIND()
-#10.  COUNT()
-#11.  REPLACE()
+#10. COUNT()
+#11. REPLACE()
 #12. SPLIT()
 #13. rSPLIT()
 #14. JOIN()
@@ -211,7 +211,7 @@
 #s.upper()
 #o/p='HELLO'
 
-#LOWER():
+#2.LOWER():
 #It is a string method, which accept string as an input and convert the string into lowercase characters.
 #It returns string.
 #It won't accept any arguments.
@@ -223,7 +223,7 @@
 #a.lower()
 #o/p= 'jesus'
 
-#SWAPCASE():
+#3.SWAPCASE():
 #It is a string method ,which accept string as an input and convert all the uppercase character into lowercase and lowercase character into uppercase.
 #It returns string.
 #It won't accept any arguments.
@@ -235,7 +235,7 @@
 #c.swapcase()
 #o/p='jESus'
 
-#CAPITALIZE():
+#4.CAPITALIZE():
 #It is a string method, which converts first letter of a string into uppercase and remaining letters into lowercase.
 #It returns string.
 #It won't accepts any arguments.
@@ -247,7 +247,7 @@
 #a.capitalize()
 #o/p:'Love is blind'
 
-#TITLE():
+#5.TITLE():
 #It is a string method ,which accepts string and return the string by converting first letter of every word into uppercase and remaining lwtter into lowercase.
 # It returns string.
 #It won't accept any arguments.
@@ -260,7 +260,7 @@
 #o/p='Hello Everyone Here'
 #  
 
-#INDEX():
+#6.INDEX():
 #It is a string method, is used to find first occured specified element from the left side.
 # The return type of index is 'INTEGER'.
 # It accepts 3 arguments.
@@ -270,17 +270,17 @@
 # 
 # By default start index is 0 and end index is length of the collection.
 # It  rises VALUE ERROR,if the specified element is not present in the collection.
-# 
+
 # SYNTAX:
 # string.index(substring,[SI,EI]).........[] indicates the optional.
-# 
+ 
 # ex:
 # a='jenifer'
 # a.index('e',0,5)
 #o/p=1
-# 
-# 
-# rINDEX():
+ 
+ 
+#7.rINDEX():
 # It is a string method,which is used to find the position of a first occured specified element from the right side.
 # It returns 'INTEGER'.
 
@@ -297,7 +297,7 @@
 #o/p=2
 
 
-#FIND()
+#8.FIND()
 
 # It is a string method,which is used to find the position of a first occured specified element from the LEFT side.
 #  It returns 'INTEGER'.
@@ -306,7 +306,7 @@
 # 2.start index
 # 3.end index  
 
-##SYNTAX:
+#SYNTAX:
 #string.FIND(substring,[SI,EI]).........[] indicates the optional.
 
 
@@ -315,7 +315,7 @@
 #o/p=2
 
 
-#rFIND():
+#9.rFIND():
 
 #It is a string method,which is used to find the position of a first occured specified element from the RIGHT side.
 #  It returns 'INTEGER'.
@@ -328,5 +328,268 @@
 #string.rFIND(substring,[SI,EI]).........[] indicates the optional.
 
 #ex: a='APPLE'
-#a.Rfind('P')
-#o/p=
+#a.rfind('P')
+#o/p=2
+
+#10.COUNT():
+#It is used to find how many times the specified substring is repeated.
+
+#  It returns 'INTEGER'.
+# It accepts 3 arguments.
+# 1.element or substring.
+# 2.start index
+# 3.end index  
+
+#Substring is mandatory but start index and end index are optional.
+#If the specified element is not present it returns 0.
+
+#SYNTAX:
+#string.count(substring,[SI,EI])........[] indicates the optional.
+#ex:
+#a='jennifer'
+#a.count('n')
+#o/p=2
+
+#11.REPLACE():
+
+#It is used to replace the old string with new string.
+#it accepts 3 arguments.
+#'old_string'
+#new_string'
+#count
+
+#SYNTAX:
+#string.replace('old_string,new_string,[count])
+
+#ex: a='hello'
+#a.replace('l','a')
+#o/p='heaao'
+
+#12.SPLIT():
+
+#It is used to seperate the given string based on the separator.
+#Default separator is '_' (space).
+#If the specified separator is not prsent it returns the string as it is.
+#The return type of split is [list].
+ 
+# SYNTAX:
+# string.split('separator',[max_split])
+ 
+# ex: a='hello world'
+# a.split()
+# o/p=['hello,'world'] 
+
+#13.rSPLIT:
+#It is used to seperate the given string based on the separator.
+#if we mention maximum split,it will split from right side.
+#Default separator is '_' (space).
+#If the specified separator is not prsent it returns the string as it is.
+#The return type of split is [list].
+
+# SYNTAX:
+# string.rsplit('separator',[max_split])
+
+#ex:
+#a='hello every one'
+#a.rsplit()
+#o/p=['hello','every','one']
+#s.rsplit(' ',1)=>['hello every','one']
+
+
+#14.JOIN():
+#Join is used to join a string,for each and every element present in a iterable(through which we can traverse).
+#Join always accepts 'string' as an input.
+#Return type of join is STRING.
+
+#SYNTAX:
+# string.join(iterable)
+
+#ex:
+#@.join('12345')
+#o/p='1@2@3@4'
+
+#STRIP:
+#It is used to remove the specified element from leading and tailing.
+#Default character is space('_').
+
+#WORKING:
+#it starts removing the given character from the leading part until the unmatched character is found.
+#Once the unmatch is found ,it will jump into the tailing part and removes the specified character until unmatch is found.
+ 
+#SYNTAX:
+# string.strip([character])
+
+#ex:
+#s='@@@@hello@@@@'
+#s.strip('@')
+#o/p=> 'hello'
+
+#lSTRIP:
+#It is used to remove the specified element from leading part.
+#Default character is space '_'
+#
+#SYNTAX:
+#string.lstrip(['character'])
+
+#ex:
+#a='      hello         '
+#a.lstrip()
+#o/p=>'hello      '
+
+
+#rSTRIP:
+#It is used to remove the specified element from tailing part.
+#Default character is space '_'
+#
+#SYNTAX:
+#string.rstrip(['character'])
+
+#ex:
+#s='       hello        '
+#s.rstrip()
+#o/p=> '     hello'
+# 
+# 
+# STARTSWITH:
+
+#It is used to check whether the given string is starting with specified substring.
+#It returns BOOLEAN VALUE.
+#If the given string starts with specified character,it returns 'TRUE' else it returns 'FALSE'.
+#
+#SYNTAX:
+# string.startswith(sub_string,[SI,EI])
+
+#ex:
+#s='hello pyhton'
+#s.startswith('h')
+#o/p=>TRUE
+
+#ENDSWITH:
+#It is used to check whether the given string is ending with specified substring.
+#It returns BOOLEAN VALUE.
+#If the given string ends with specified character,it returns 'TRUE' else it returns 'FALSE'.
+#
+#SYNTAX:
+# string.endswith(sub_string,[SI,EI])
+#
+#ex:
+#s='hello'
+#s.endswith('o')
+#o/p=>TRUE
+
+#IS UPPER():
+#
+#It is used to check whether the given string is containing only UPPER CASE characters.
+#It returns BOOLEAN VALUE.
+# It returns 'TRUE' ,if the given string is having only uppercase characters.
+#It won't accept any arguments.
+
+#SYNTAX:
+#string.isupper()
+
+#ex:
+#s='HELLO'
+#s.upper()
+#o/p=> TRUE
+
+#ISLOWER():
+
+#It is used to check whether the given string is containing only LOWER CASE characters.
+#It returns BOOLEAN VALUE.
+# It returns 'TRUE' ,if the given string is having only lowercase characters.
+#It won't accept any arguments.
+
+#SYNTAX:
+#string.islower()
+
+#ex:
+#s='hello'
+#s.islower()
+#TRUE
+
+#IS ALPHA():
+#It is used to check whether the given string having only alphabets or not.
+#It returns BOOLEAN VALUE.
+# It returns 'TRUE' ,if the given string is having completely alphabets.
+#It won't accept any arguments.
+
+#SYNTAX:
+# string.isalpha()
+
+#ex:
+#s='jeni'
+#s.isalpha()
+#o/p=> TRUE
+
+
+#IS DIGIT():
+#It is used to check whether the given string having completely numbers.
+#It returns BOOLEAN VALUE.
+# It returns 'TRUE' ,if the given string is having completely digits.
+#It won't accept any arguments.
+
+#SYNTAX:
+#string.isdigit()
+
+#ex:
+#a='1234556'
+#a.isdigit()
+#o/p=> TRUE
+
+
+#IS ALNUM():
+
+#It is used to check whether the given string having only alphabets,only digits ,combination of alphabets and numbers.
+#It returns BOOLEAN VALUE.
+# It returns 'TRUE' ,if the given string is having completely digits.
+#It won't accept any arguments.
+
+#SYNTAX:
+#string.isalnum()
+
+#ex:
+#s='hello'
+#s.isalnum()
+#o/p=> TRUE
+
+#ex:
+#s='123232'
+#s.isalnum()
+#o/p=> TRUE
+
+#EX:
+#s='123jeni'
+#s.isalnum()
+#o/p=> TRUE
+
+#IS SPACE():
+#It returns TRUE, if the given string contains only SPACE.
+
+#SYNTAX:
+#'_' . isspace()
+
+#ex:
+#a=' '
+#a.isspace()
+#o/p=> TRUE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
