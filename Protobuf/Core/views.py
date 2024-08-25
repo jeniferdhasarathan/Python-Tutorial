@@ -69,3 +69,52 @@ class SampleDataAPIView(APIView):
                 return Response({'error': 'Sample data not found'}, status=status.HTTP_404_NOT_FOUND)
             except Exception as e:
                 return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            
+
+
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from .models import User, Project
+from .serializer import UserSerializer, AdminSerializer, ProjectSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.filter(is_admin=False)  # Only return regular users
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]  # Only admins can manage users
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+class AdminViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.filter(is_admin=True)  # Only return admin users
+    serializer_class = AdminSerializer
+    permission_classes = [IsAuthenticated, IsAdminUser]  # Only admins can manage other admins
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [IsAuthenticated]  # Any authenticated user can manage their own projects
+
+    def get_queryset(self):
+        # Admins can see all projects, users can only see their own
+        user = self.request.user
+        if user.is_admin:
+            return Project.objects.all()
+        return Project.objects.filter(owner=user)
+    
+    def perform_create(self, serializer):
+        # Automatically assign the project to the current user
+        serializer.save(owner=self.request.user)
